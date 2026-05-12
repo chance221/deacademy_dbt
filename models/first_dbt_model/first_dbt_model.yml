@@ -23,7 +23,8 @@ models:
       - name: country
   - name: sales
     description: "Sales DBT model"
-    columns: 
+  - name: product
+    description: "Product DBT model"
 sources:
   - name: employee #source name to be referenced in dbt
     database: DBT_DB
@@ -45,3 +46,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: SALES_SRC
+  - name: product_src
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PRODUCT_SRC
