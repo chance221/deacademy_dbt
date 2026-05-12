@@ -1,0 +1,30 @@
+{{
+    config
+    (
+        materialized = 'incremental',
+        incremental_strategy = 'append'
+    )
+}}
+
+with sales_src as 
+(
+    select
+    SALE_ID, 
+    SALE_DATE, 
+    CUSTOMER_ID, 
+    PRODUCT_ID, 
+    QUANTITY, 
+    TOTAL_AMOUNT,
+    CREATED_AT,
+    CURRENT_TIMESTAMP AS INSERT_DTS
+
+    from {{source('sales_src', 'SALES_SRC')}}
+
+    {% if is_incremental() %}
+    where CREATED_AT > (select max(INSERT_DTS) from {{this}})
+    {% endif %}
+)
+
+select * from sales_src
+
+-- incremental strategy docs here docs.getdbt.com/docs/build/incremental-strategy
