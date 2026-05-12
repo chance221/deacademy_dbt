@@ -4,6 +4,7 @@ models:
   - name: employee
     description: "Employee DBT model"
     columns: 
+    # name of the columns and what test need to be run on them. 
       - name: emp_id
         data_tests:
           - unique
@@ -13,6 +14,9 @@ models:
                 values: ['1', '2', '3', '4', '5']
                 config: 
                   severity: warn
+      - name: emp_salary
+        data_tests:
+          - salary_check
 sources:
   - name: employee
     database: DBT_DB
