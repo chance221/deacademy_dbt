@@ -1,11 +1,4 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
+Incremental changes using append. Docs can found here docs.getdbt.com/docs/build/incremental-strategy
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
