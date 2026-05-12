@@ -27,6 +27,10 @@ models:
     description: "Product DBT model"
   - name: purchase
     description: "Purchase DBT model"
+  - name: clean_orders
+    description: "DBT emhemeral for claen_orders"
+  - name: final_orders
+    description: "DBT model for final_orders"
 sources:
   - name: employee #source name to be referenced in dbt
     database: DBT_DB
@@ -58,3 +62,9 @@ sources:
     schema: PUBLIC
     tables:
       - name: PURCHASE_SRC 
+  - name: orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: 'BASE_ORDERS'
+    
