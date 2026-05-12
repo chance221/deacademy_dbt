@@ -1,3 +1,7 @@
+When you provide a record that has a duplicate key along with new reecords you can update the existing record or delete. 
+
+Deleting is faster, and here is the incremental strategy to handle delet and insert operations.  
+
 Incremental changes using append. Docs can found here docs.getdbt.com/docs/build/incremental-strategy
 
 ### Resources:
