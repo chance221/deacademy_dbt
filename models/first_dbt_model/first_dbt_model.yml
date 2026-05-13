@@ -27,6 +27,8 @@ models:
     description: "Product DBT model"
   - name: purchase
     description: "Purchase DBT model"
+  - name: session
+    description: "DBT model for session"
 sources:
   - name: employee #source name to be referenced in dbt
     database: DBT_DB
@@ -58,3 +60,14 @@ sources:
     schema: PUBLIC
     tables:
       - name: PURCHASE_SRC 
+  - name: patient_src
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
+  - name: session_src
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: SESSION_SRC
+  
