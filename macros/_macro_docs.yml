@@ -1,0 +1,19 @@
+macros:
+  - name: cents_to_dollars
+    description: A macro that converts cents to dollars and rounds to the user argument for decimal places, or 2 by default
+    arguments:
+      - name: column_name
+        type: string
+        description: Name of column requiring conversion
+      - name: decimals
+        type: integer
+        description: Number of decimal places you are rouding converted column to. Defaults to 2 decimal places.
+  - name: grant_select
+    description: schema we wnat to grant privs to.
+    arguments:
+      - name: schema
+        type: string
+        description: schema you want to provide privilages to
+      - name: role
+        type: string
+        description: the role you are providing privilages to
