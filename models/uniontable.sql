@@ -1,0 +1,1 @@
+{{ union_tables_by_prefix('raw', schema='JAFFLE_SHOP', prefix='orders__')}}
